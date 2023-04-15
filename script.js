@@ -1,15 +1,25 @@
 "use strict"
 
+// let color = Math.random()
+// color = Math.random().toString(16).substring(2, 8)
 
-const generateBtn = document.querySelector(".generate")
-const displayNumber = document.querySelector(".number")
+// console.log(color);
 
 
+const hex = document.querySelector(".hex")
 
-const generateNumber = () => {
-    const getRandomNumber = Math.floor(Math.random() * 100 + 1)
+const btn = document.querySelector(".generate")
 
-    displayNumber.innerHTML = getRandomNumber
+const body = document.querySelector("body")
+
+const generateHexColor = () => {
+    const randomColor = Math.random().toString(16).substring(2, 8)
+
+    document.body.style.backgroundColor = "#" + randomColor
+
+    hex.innerHTML = "#" + randomColor
 }
 
-generateBtn.addEventListener("click", generateNumber)
+body.addEventListener("mousewheel", generateHexColor)
+
+btn.addEventListener("click", generateHexColor)
