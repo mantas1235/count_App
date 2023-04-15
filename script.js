@@ -1,24 +1,15 @@
 "use strict"
 
 
-
-
-
-
-
 const generateBtn = document.querySelector(".generate")
+const displayNumber = document.querySelector(".number")
 
-const number = document.querySelector(".number")
 
 
 const generateNumber = () => {
-    //generate number btw 1 and 100
+    const getRandomNumber = Math.floor(Math.random() * 100 + 1)
 
-    const randomNumber = Math.floor(Math.random() * 100 + 1)
-
-    number.innerHTML = randomNumber
-
+    displayNumber.innerHTML = getRandomNumber
 }
 
 generateBtn.addEventListener("click", generateNumber)
-
